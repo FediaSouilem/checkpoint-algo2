@@ -1,0 +1,97 @@
+
+//probleme 1 solution 1
+ALGORITHM checkpoint algoritm2.algo
+VAR
+   tab1 : ARRAY_OF INTEGER;
+   tab2 : ARRAY_OF INTEGER;
+   i, j, sum : INTEGER; 
+   condition: BOOLEAN
+BEGIN
+ condition:=FALSE;
+ SUM:=0
+  FOR i FROM 0 TO i<tab1.length  DO   
+IF (tab1[i]!= tab2[j]) THEN
+    condition:=TRUE;
+    sum+=tab1[i];
+     ELSE condition:=FALSE;
+        BREAK;
+END_IF
+ END_FOR
+
+FOR j FROM 0 TO j<tab2.length  DO   
+IF (tab1[i] != tab2[j]) THEN
+    condition:=TRUE;
+    sum+=tab2[j];
+        ELSE find:=FALSE;
+        BREAK;
+        END_IF
+    END_FOR
+    write("The sum of all distinct elements is," sum)
+
+  END
+
+//   probleme 2 solution 1
+
+ALGORITHM checkpoint algoritm2.algo
+VAR
+   tab1 : ARRAY_OF INTEGER;
+   tab2 : ARRAY_OF INTEGER;
+   i, j, sum : INTEGER; 
+   condition: BOOLEAN
+BEGIN
+ condition:=FALSE;
+ SUM:=0
+  FOR i FROM 0 TO i<tab1.length  DO  
+IF (tab1[i]=tab2[j]) THEN
+    condition:=TRUE;
+    sum+=tab1[i];
+     ELSE condition:=FALSE;
+        BREAK;
+END_IF
+ END_FOR
+ FOR j FROM 0 TO j<tab2.length  DO   
+IF (tab1[i]=tab2[j]) THEN
+    condition:=TRUE;
+    sum+=tab2[j];
+        ELSE find:=FALSE;
+        BREAK;
+        END_IF
+    END_FOR
+    write("The sum of all overlapping elements is," sum)
+    END
+
+
+
+// HASH_TABLE
+// problem 1 et 2 solution 2
+
+ALGORITHM checkpoint algoritm2.algo
+VAR
+ htab : HASH_TABLE<INTEGER,INTEGER>;
+set1: ARRAY_OF INTEGER;
+set2: ARRAY_OF INTEGER;
+sum-diff, sum-common : INTEGER; 
+sum-common:=0
+sum-diff:=0
+
+ BEGIN
+   
+  set:=set1.concat(set2)
+ FOR (i=0, i<set.length, i++)
+       IF (htab.lookup (set[i])=true) DO
+           htab.insert((set[i]), htab.get(set[i])+1)
+       END_IF
+       ELSE
+        htab.insert (set[i], 1)
+   END_FOR
+  
+   FOR (var element of htab){
+       if element[1]===1{sum-diff+=element[0]}
+       else{
+           sum-common +=element[0]*element[1]}
+       }
+   }
+    write("The sum of all overlapping elements is," sum-common)
+     write("The sum of all distinct elements is," sum-diff)
+
+END
